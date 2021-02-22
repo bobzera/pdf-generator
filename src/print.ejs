@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Batfitter</title>
+</head>
+<body class="bg-blue-500 text-white">
+    <div class="container p-10 mx-auto">
+        <h1 class="p-2 py-14 text-4xl font-bold">Bat Fitter who are thoses?</h1>
+        <table>
+            <thead>
+                <tr class="text-left p-2">
+                    <th class="w-40 py-4">Name</th>
+                    <th class="w-40 py-4">Batfitter Namme</th>
+                    <th class="w-40 py-4">Flying Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% if (fitters.length > 0) {%>
+                <% fitters.forEach(fitter => { %>
+                    <tr>
+                        <td><%= fitter.name %></td>
+                        <td><%= fitter.batFitterName %></td>
+                        <td><%= fitter.horasDeVoo %></td>                    
+                    </tr>
+                <% }); %>
+            <% } %>
+            </tbody>
+            <tfoot>
+                <tr><td colspan="2"><%= fitters.length%> fitters</td></tr>
+            </tfoot>
+        </table>
+    </div>
+    
+</body>
+</html>
